@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume — Neil Chavez</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text y='68' x='50' text-anchor='middle' font-size='52' font-family='Georgia,serif' font-weight='400' fill='%23c9a96e'>&gt;_</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --bg-card: #111111;
+            --bg-hover: #161616;
+            --border: #222222;
+            --border-subtle: #1a1a1a;
+            --text-primary: #f0ede8;
+            --text-secondary: #888880;
+            --text-muted: #444440;
+            --accent: #e8d5b0;
+            --accent-warm: #c9a96e;
+            --accent-glow: rgba(201, 169, 110, 0.15);
+            --green: #4a7c59;
+            --green-light: #6aab7a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.4;
+        }
+
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 80px 0 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(48px, 8vw, 72px);
+            font-weight: 400;
+            line-height: 1.05;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--accent-warm);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .header-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+        .header-links a {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .header-links a:hover { color: var(--accent-warm); }
+        .header-links a::before { content: '↗'; font-size: 10px; }
+
+        section {
+            padding: 56px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        section:last-of-type { border-bottom: none; }
+
+        .section-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 15.5px;
+            line-height: 1.8;
+        }
+
+        p:last-child { margin-bottom: 0; }
+
+        /* Timeline */
+        .timeline { display: flex; flex-direction: column; gap: 2px; }
+
+        .timeline-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 24px 28px;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .timeline-item:first-child { border-radius: 8px 8px 0 0; }
+        .timeline-item:last-child { border-radius: 0 0 8px 8px; }
+        .timeline-item:hover { background: var(--bg-hover); border-color: #2a2a2a; }
+
+        .timeline-company {
+            font-family: 'DM Serif Display', serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-role {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            letter-spacing: 0.05em;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-bullets li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .timeline-bullets li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--accent-warm);
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .timeline-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 28px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+
+        .timeline-divider-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .timeline-divider-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* Skills grid */
+        .skills-grid { display: grid; gap: 2px; }
+
+        .skill-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 16px 24px;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+        }
+
+        .skill-item:first-child { border-radius: 8px 8px 0 0; }
+        .skill-item:last-child { border-radius: 0 0 8px 8px; }
+        .skill-item:hover { background: var(--bg-hover); }
+
+        .skill-name {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent-warm);
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+
+        .skill-desc {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Workbench */
+        .workbench-block { margin-top: 32px; }
+
+        .workbench-divider-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .workbench-divider-row::before,
+        .workbench-divider-row::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(106, 171, 122, 0.2);
+        }
+
+        .workbench-label-card {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            border: 1px solid rgba(106, 171, 122, 0.35);
+            color: var(--green-light);
+            font-family: 'DM Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .workbench-tags-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .building-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(74, 124, 89, 0.1);
+            border: 1px solid rgba(106, 171, 122, 0.2);
+            color: var(--green-light);
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            padding: 6px 12px;
+            border-radius: 4px;
+        }
+
+        .building-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--green-light);
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Certs */
+        .cert-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cert-tag {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 8px 16px;
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+        }
+
+        /* Find me */
+        .find-me-links { display: flex; flex-direction: column; gap: 2px; }
+
+        .find-me-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .find-me-link:first-child { border-radius: 8px 8px 0 0; }
+        .find-me-link:last-child { border-radius: 0 0 8px 8px; }
+
+        .find-me-link:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            border-color: #2a2a2a;
+        }
+
+        .find-me-link .icon { font-size: 18px; width: 28px; text-align: center; }
+        .find-me-link .label { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.05em; }
+        .find-me-link .arrow { margin-left: auto; color: var(--text-muted); font-size: 12px; transition: transform 0.2s ease, color 0.2s ease; }
+        .find-me-link:hover .arrow { transform: translate(2px, -2px); color: var(--accent-warm); }
+
+        /* Footer */
+        footer { padding: 40px 0; text-align: center; }
+
+        footer p {
+            font-family: 'DM Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 13px;
+            background: var(--accent-warm);
+            border-radius: 1px;
+            opacity: 0.6;
+            animation: blink 1.1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes blink {
+            0%, 49% { opacity: 0.6; }
+            50%, 100% { opacity: 0; }
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(2) { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(3) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(4) { animation-delay: 0.25s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(5) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(6) { animation-delay: 0.35s; opacity: 0; animation-fill-mode: forwards; }
+
+        @media (max-width: 600px) {
+            header { padding: 48px 0 0; }
+            section { padding: 40px 0; }
+            .skill-item { flex-direction: column; gap: 6px; }
+            .skill-name { min-width: unset; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <header>
+            <h1>Neil Chavez</h1>
+            <div class="subtitle">Senior Infrastructure Engineer · New York, NY</div>
+            <div class="header-links">
+                <a href="https://www.linkedin.com/in/neilchvz/" target="_blank">LinkedIn</a>
+                <a href="mailto:neilchvz.it@gmail.com">Email</a>
+                <a href="https://github.com/neilchvz" target="_blank">GitHub</a>
+                <a href="https://neilchvz.github.io/hire" target="_blank">About Me</a>
+            </div>
+            <div style="margin-top: 12px;">
+                <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent-warm); text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">↓ Download PDF Resume</a>
+            </div>
+            <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">Welcome 👋<br>The LinkedIn version was the trailer — this is the full film.<br>Pull up a chair and grab a coffee.</p>
+        </header>
+
+        <!-- Who am I -->
+        <section>
+            <div class="section-label">Who am I</div>
+            <h2>A bit about me</h2>
+            <p>I'm a Senior Infrastructure Engineer with 7+ years of experience across identity, cloud platforms, and environment design, built entirely through hands-on work across dozens of client environments.</p>
+            <p>My background is MSP, which means I've seen more complexity, variety, and operational pressure than most internal engineers have ever encountered. I've architected 30+ cloud environments, owned IAM design from end to end, and built automation workflows that eliminate manual touchpoints across device management and security. My current title is Director-level, but my day-to-day is still entirely hands-on. I'm the one designing and building, not just overseeing.</p>
+        </section>
+
+        <!-- What's next -->
+        <section>
+            <div class="section-label">What I'm looking for</div>
+            <h2>What's next for me</h2>
+            <p>What I'm focused on now is bringing that operational depth into an environment where infrastructure is managed as code, automation is the default, and IT is treated as a platform, not a support function. I want to plant a flag at one company, see the roadmap through, and build something that lasts — instead of moving from one client environment to another.</p>
+        </section>
+
+        <!-- Work history -->
+        <section>
+            <div class="section-label">Where I've been</div>
+            <h2>Work history</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Diligex</div>
+                    <div class="timeline-role">Director, Projects & Implementation</div>
+                    <div class="timeline-date">Jan 2026 → Present · Remote</div>
+                    <ul class="timeline-bullets">
+                        <li>Promoted into a director-level role while remaining the sole hands-on technical executor — owning architecture, implementation, and delivery end to end without a dedicated engineering team.</li>
+                        <li>Primary client-facing authority for project delivery — managing scope, expectations, and timelines across concurrent engagements.</li>
+                        <li>Contributing technical direction to long-term company strategy and operational roadmap at the executive level.</li>
+                        <li>Introduced repeatable project workflows and delivery standards to improve consistency and reduce execution overhead.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Senior Systems Engineer</div>
+                    <div class="timeline-date">Oct 2022 → Dec 2025 · Remote</div>
+                    <ul class="timeline-bullets">
+                        <li>Architected and deployed 30+ Microsoft 365 and Google Workspace tenant environments, including tenant-to-tenant migrations, Exchange to M365 migrations, and full AD to Azure AD transitions.</li>
+                        <li>Owned Conditional Access policy design across client environments — MFA enforcement, geo-blocking, and enterprise app SSO integrations via Entra ID.</li>
+                        <li>Built Azure infrastructure across client environments including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts with SFTP layers.</li>
+                        <li>Developed onboarding automation reducing L1 technician hands-on time to 30–40 minutes per deployment across major clients.</li>
+                        <li>Authored macOS fleet automation including a self-healing FileVault remediation that automatically flags, groups, and remediates non-compliant devices and escrows recovery keys.</li>
+                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored evaluations and phased remediation plans across DLP, ITDR, PAM, and SaaS backup.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Information Technology Systems Engineer</div>
+                    <div class="timeline-date">Nov 2020 → Oct 2022 · Hybrid – New York, NY</div>
+                    <ul class="timeline-bullets">
+                        <li>Administered cloud environments across M365 and Google Workspace including identity systems, device management, and end-user infrastructure across diverse client organizations.</li>
+                        <li>Took on independent project ownership — leading cloud tenant setup, identity integrations, and MDM rollouts as scope increased.</li>
+                        <li>Contributed to security and endpoint initiatives including MFA rollouts, device encryption, and user security awareness programs.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">IT Technician</div>
+                    <div class="timeline-date">Nov 2019 → Nov 2020 · Onsite – New York, NY</div>
+                    <ul class="timeline-bullets">
+                        <li>Provided hands-on support across endpoints, infrastructure, and user environments while contributing to system deployments, onboarding, and cloud platform administration.</li>
+                        <li>Built foundational skills in troubleshooting, system configuration, and technical documentation across diverse client environments.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-divider">
+                    <div class="timeline-divider-line"></div>
+                    <div class="timeline-divider-label">Earlier roles</div>
+                    <div class="timeline-divider-line"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Dynamic Business Systems</div>
+                    <div class="timeline-role">IT Support Specialist</div>
+                    <div class="timeline-date">Oct 2018 → Nov 2019 · Onsite – New York, NY</div>
+                    <ul class="timeline-bullets">
+                        <li>Technical support across enterprise and mid-sized environments — Windows and macOS endpoints, business applications, and user infrastructure.</li>
+                        <li>Early exposure to identity and access management through user provisioning, application environments, and system administration tasks.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">RDS Team</div>
+                    <div class="timeline-role">Technical Support & Implementation Specialist</div>
+                    <div class="timeline-date">Oct 2017 → Sep 2018 · Onsite – Miami, FL</div>
+                    <ul class="timeline-bullets">
+                        <li>Delivered technical support and configuration services across client environments including endpoints, document systems, and POS hardware.</li>
+                        <li>Supported cloud-connected and on-prem system deployments, building foundational skills in field implementation and system integration.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Printer / Copier Service Technician</div>
+                    <div class="timeline-date">Sep 2015 → Oct 2017 · Onsite – Miami, FL</div>
+                    <ul class="timeline-bullets">
+                        <li>Installation, maintenance, and repair of office hardware and document systems across diverse client environments.</li>
+                        <li>Built foundational technical troubleshooting skills through hands-on hardware diagnosis and field service work — the starting point of a career in technology.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- What I've built -->
+        <section>
+            <div class="section-label">What I've built</div>
+            <h2>Projects & implementations</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Azure Infrastructure Buildouts</div>
+                    <div class="timeline-role">Cloud Infrastructure</div>
+                    <ul class="timeline-bullets">
+                        <li>Designed, deployed and revamped Azure environments across multiple client organizations including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts with SFTP layers.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">30+ Cloud Tenant Deployments</div>
+                    <div class="timeline-role">Microsoft 365 & Google Workspace</div>
+                    <ul class="timeline-bullets">
+                        <li>Architected and deployed 30+ M365 and Google Workspace tenant environments including new tenant buildouts and security best practices, MFA roll-outs, tenant-to-tenant migrations, Hosted Exchange to Exchange Online migrations and full AD to Azure AD transitions.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Self-Healing FileVault Remediation</div>
+                    <div class="timeline-role">macOS Automation</div>
+                    <ul class="timeline-bullets">
+                        <li>Created a production macOS automation workflow to resolve two problems: devices not having FileVault enabled and technicians having to manually identify and remediate them. The workflow automatically flagged non-compliant devices, grouped them, and deployed an app instructed to enable FileVault and escrow the recovery keys directly to the device record on the MDM platform — removing the manual human element entirely.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Production Monitoring System</div>
+                    <div class="timeline-role">Automation & Alerting</div>
+                    <ul class="timeline-bullets">
+                        <li>Built a site-aware production monitoring system with logic that routes alerts into a ticketing system via parsed email triggers — reducing noise and getting the right alert to the right place automatically.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Onboarding Automation</div>
+                    <div class="timeline-role">Device Management & RMM</div>
+                    <ul class="timeline-bullets">
+                        <li>Developed onboarding automation using MDM and RMM tooling that reduced L1 technician hands-on time to 30–40 minutes per deployment across major clients — down from a fully manual process.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">NIST Security Risk Assessments</div>
+                    <div class="timeline-role">Security & Compliance</div>
+                    <ul class="timeline-bullets">
+                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored evaluations and phased remediation plans. Led rollouts across DLP, ITDR, PAM, and SaaS backup/recovery solutions.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Conditional Access & IAM Design</div>
+                    <div class="timeline-role">Identity & Access Management</div>
+                    <ul class="timeline-bullets">
+                        <li>Owned Conditional Access policy design across client environments — MFA enforcement on compliant devices, geo-blocking, Zero Trust principles, and enterprise app SSO integrations via Entra ID.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section>
+            <div class="section-label">What I know</div>
+            <h2>Core skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">Identity & Access</div>
+                    <div class="skill-desc">Entra ID, Conditional Access, SSO, RBAC, MFA, BYOD & app protection policies</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Cloud Platforms</div>
+                    <div class="skill-desc">Microsoft 365, Azure (VNets, VMs, Storage, Private DNS, Azure Files), Google Workspace</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Device Management</div>
+                    <div class="skill-desc">Intune, Addigy (certified), Autopilot, macOS & Windows fleet management</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Security</div>
+                    <div class="skill-desc">NIST Risk Assessments, Zero Trust, DLP (Purview), ITDR, PAM, email security</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Automation</div>
+                    <div class="skill-desc">PowerShell, Bash, RMM/MDM automation, workflow design</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Infrastructure</div>
+                    <div class="skill-desc">Systems architecture, migrations, environment standardization, networking (Meraki certified)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I'm learning -->
+        <section>
+            <div class="section-label">What I'm learning</div>
+            <h2>Currently building</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name" style="color: var(--green-light);">Terraform</div>
+                    <div class="skill-desc">Infrastructure as Code — declarative, state-driven provisioning. Azure is the primary environment.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name" style="color: var(--green-light);">Git / GitHub</div>
+                    <div class="skill-desc">Version control, repo management, GitHub Pages. This site is built and deployed with it.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name" style="color: var(--green-light);">Python</div>
+                    <div class="skill-desc">Automation scripting and tooling — on the roadmap after Terraform.</div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <!-- Certifications -->
+        <section>
+            <div class="section-label">Certifications</div>
+            <h2>Certs</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-name">Microsoft 365 Certified: Endpoint Administrator Associate · 2020</div>
+                    <div class="skill-desc">Device management, compliance policies, and endpoint security across M365 environments. · Credential ID: DC49F65F76C25A3C · <a href="https://learn.microsoft.com/en-us/users/neilchavez-7536/credentials/dc49f65f76c25a3c" target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential ↗</a></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Cisco Certified Meraki Network Associate (CMNA) · 2021</div>
+                    <div class="skill-desc">Meraki networking fundamentals — switching, wireless, security appliances, and cloud management.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Addigy Certified Expert (ACE) · 2024</div>
+                    <div class="skill-desc">Demonstrates expert level proficiency for macOS fleet management, MDM policies, and Apple device administration using the Addigy cloud-based platform and tools. · Credential ID: 127104333 · <a href="https://www.credential.net/88084578-2e8e-4143-95c1-dcf5a912fb90#acc.Bu8EJeQy" target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential ↗</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Outside of work -->
+        <section>
+            <div class="section-label">Human stuff</div>
+            <h2>When I'm not working</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Photography 📸</div>
+                    <ul class="timeline-bullets">
+                        <li>Black and white is my specialty. Shameless plug but check out my portfolio! <a href="https://www.kofotografi.com/" target="_blank" style="color: var(--accent-warm); text-decoration: none;">kofotografi.com</a></li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Music 🎸</div>
+                    <ul class="timeline-bullets">
+                        <li>I play guitar, currently fiddling with Samba and Bossa Nova. I also play saxophone — although getting back to it is still on my resolutions list.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Plants 🌿</div>
+                    <ul class="timeline-bullets">
+                        <li>I love them and I grow them. I have over 20 and yes, they each have names. The goal is to turn my Brooklyn living room into a full jungle.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">My Cat 🐱</div>
+                    <ul class="timeline-bullets">
+                        <li>Her name is Chloe, she's all black, and she's perfect.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">New York City 🗽</div>
+                    <ul class="timeline-bullets">
+                        <li>I live in the greatest city in the world, fight me if you disagree. I enjoy exploring it with my girlfriend.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Find me -->
+        <section>
+            <div class="section-label">Find me</div>
+            <h2>Get in touch</h2>
+            <div class="find-me-links">
+                <a class="find-me-link" href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank">
+                    <span class="icon">📄</span>
+                    <span class="label">Download PDF Resume</span>
+                    <span class="arrow">↓</span>
+                </a>
+                <a class="find-me-link" href="https://www.linkedin.com/in/neilchvz/" target="_blank">
+                    <span class="icon">💼</span>
+                    <span class="label">LinkedIn</span>
+                    <span class="arrow">↗</span>
+                </a>
+                <a class="find-me-link" href="mailto:neilchvz.it@gmail.com">
+                    <span class="icon">✉️</span>
+                    <span class="label">neilchvz.it@gmail.com</span>
+                    <span class="arrow">↗</span>
+                </a>
+                <a class="find-me-link" href="https://github.com/neilchvz" target="_blank">
+                    <span class="icon">💻</span>
+                    <span class="label">GitHub</span>
+                    <span class="arrow">↗</span>
+                </a>
+                <a class="find-me-link" href="https://neilchvz.github.io/hire" target="_blank">
+                    <span class="icon">👋</span>
+                    <span class="label">About Me</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>Built with Git & GitHub Pages · neilchvz · NYC <span class="footer-cursor"></span></p>
+        </footer>
+
+    </div>
+</body>
+</html>
