@@ -15,9 +15,9 @@
             --bg-hover: #161616;
             --border: #222222;
             --border-subtle: #1a1a1a;
-            --text-primary: #f0ede8;
-            --text-secondary: #888880;
-            --text-muted: #444440;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #555550;
             --accent: #e8d5b0;
             --accent-warm: #c9a96e;
             --accent-glow: rgba(201, 169, 110, 0.15);
@@ -106,7 +106,7 @@
             font-weight: 500;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: var(--text-muted);
+            color: var(--accent-warm);
             margin-bottom: 28px;
         }
 
@@ -134,7 +134,7 @@
         .timeline-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 24px 28px;
+            padding: 12px 20px;
             transition: background 0.2s ease, border-color 0.2s ease;
         }
 
@@ -162,8 +162,8 @@
         .timeline-date {
             font-family: 'DM Mono', monospace;
             font-size: 11px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            color: #888880;
+            margin-bottom: 10px;
             letter-spacing: 0.05em;
         }
 
@@ -171,7 +171,7 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
         }
 
         .timeline-bullets li {
@@ -210,7 +210,7 @@
         .timeline-divider-label {
             font-family: 'DM Mono', monospace;
             font-size: 10px;
-            color: var(--text-muted);
+            color: #888880;
             letter-spacing: 0.15em;
             text-transform: uppercase;
         }
@@ -221,7 +221,7 @@
         .skill-item {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            padding: 20px 24px;
+            padding: 12px 20px;
             transition: background 0.2s ease, border-color 0.2s ease;
         }
 
@@ -317,17 +317,17 @@
 
         /* Note card */
         .note-card {
-            background: var(--accent-glow);
-            border: 1px solid rgba(201, 169, 110, 0.2);
+            background: transparent;
+            border: 1px solid rgba(201, 169, 110, 0.4);
             border-radius: 8px;
-            padding: 20px 24px;
+            padding: 12px 20px;
             margin-top: 24px;
         }
 
         .note-card p {
             font-size: 14px;
             color: var(--accent);
-            opacity: 0.85;
+            opacity: 1;
             margin: 0;
             font-style: italic;
         }
@@ -357,12 +357,12 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            padding: 16px 20px;
+            padding: 12px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.2s ease;
         }
 
@@ -435,16 +435,17 @@
     <div class="container">
 
         <header>
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 0;">
+                <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12px; color: #888880; text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">Download PDF Resume</a>
+            </div>
             <h1>Neil Chavez</h1>
             <div class="subtitle">Senior Infrastructure Engineer · New York, NY</div>
             <div class="header-links">
-                <a href="https://www.linkedin.com/in/neilchvz/" target="_blank">LinkedIn</a>
-                <a href="mailto:neilchvz.it@gmail.com">Email</a>
-                <a href="https://github.com/neilchvz" target="_blank">GitHub</a>
+                <a href="https://neilchvz.github.io/infrastructure-portfolio" target="_blank">Portfolio</a>
                 <a href="https://neilchvz.github.io/hire" target="_blank">About Me</a>
-            </div>
-            <div style="margin-top: 12px;">
-                <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent-warm); text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">↓ Download PDF Resume</a>
+                <a href="mailto:neilchvz.it@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/neilchvz/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/neilchvz" target="_blank">GitHub</a>
             </div>
             <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">Welcome 👋<br>The LinkedIn version was the trailer — this is the full film.<br>Pull up a chair and grab a coffee.</p>
         </header>
@@ -614,6 +615,14 @@
                     </ul>
                 </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-company">Personal Brand & Portfolio Site</div>
+                    <div class="timeline-role">Web Development & GitHub Pages</div>
+                    <ul class="timeline-bullets">
+                        <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using HTML, CSS, and GitHub Pages. Managed with Git from day one — SSH authentication, repo structure, version control workflow.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
@@ -640,7 +649,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Automation</div>
-                    <div class="skill-desc">PowerShell, Bash, RMM/MDM automation, workflow design</div>
+                    <div class="skill-desc">PowerShell, Bash, Git/GitHub, RMM/MDM automation, workflow design</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Infrastructure</div>
@@ -649,7 +658,7 @@
             </div>
 
             <div class="note-card">
-                <p>A note on tools: I've listed specific products where relevant but I hire myself on concepts, not logos. The vendors change but the principles don't. Put Okta in front of me and I'll be productive fast. If you need Jamf experience and I have Addigy, that's an afternoon of reading, not a skill gap. The same goes for any other tool in a domain I already understand deeply.</p>
+                <p>A note on tools: I've listed specific products where relevant but I hire myself on concepts, not logos. The vendors change but the principles don't. If you put Okta in front of me, I'll be productive fast. If you need Jamf experience but I have Addigy, that's an afternoon of reading, not a gap in skill. The same goes for any other tool in a domain I already understand deeply.</p>
             </div>
         </section>
 
@@ -660,23 +669,19 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name" style="color: var(--green-light);">Terraform</div>
-                    <div class="skill-desc">Infrastructure as Code — declarative, state-driven provisioning. Azure is the primary environment.</div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name" style="color: var(--green-light);">Git / GitHub</div>
-                    <div class="skill-desc">Version control, repo management, GitHub Pages. This site is built and deployed with it.</div>
+                    <div class="skill-desc">Infrastructure as Code — declarative, state-driven provisioning.</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name" style="color: var(--green-light);">Python</div>
-                    <div class="skill-desc">Automation scripting and tooling — on the roadmap after Terraform.</div>
+                    <div class="skill-desc">Automation scripting and tooling.</div>
                 </div>
             </div>
         </section>
 
         <!-- Certifications -->
         <section>
-            <div class="section-label">Certifications</div>
-            <h2>Certs</h2>
+            <div class="section-label">Credentials</div>
+            <h2>Certifications</h2>
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name">Microsoft 365 Certified: Endpoint Administrator Associate · 2020</div>
@@ -695,57 +700,25 @@
 
         <!-- Outside of work -->
         <section>
-            <div class="section-label">Human stuff</div>
+            <div class="section-label">Personal Life</div>
             <h2>When I'm not working</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <div class="timeline-company">Photography 📸</div>
-                    <ul class="timeline-bullets">
-                        <li>Black and white is my specialty. Shameless plug but check out my portfolio! <a href="https://www.kofotografi.com/" target="_blank" style="color: var(--accent-warm); text-decoration: none;">kofotografi.com</a></li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-company">Music 🎸</div>
-                    <ul class="timeline-bullets">
-                        <li>I play guitar, currently fiddling with Samba and Bossa Nova. I also play saxophone — although getting back to it is still on my resolutions list.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-company">Plants 🌿</div>
-                    <ul class="timeline-bullets">
-                        <li>I love them and I grow them. I have over 20 and yes, they each have names. The goal is to turn my Brooklyn living room into a full jungle.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-company">My Cat 🐱</div>
-                    <ul class="timeline-bullets">
-                        <li>Her name is Chloe, she's all black, and she's perfect.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-company">New York City 🗽</div>
-                    <ul class="timeline-bullets">
-                        <li>I live in the greatest city in the world, fight me if you disagree. I enjoy exploring it with my girlfriend.</li>
-                    </ul>
-                </div>
-
-            </div>
+            <p>I shoot photography 📸, black and white is my specialty. I grow plants 🌿 and I'm actively working on making my Brooklyn living room as much of a jungle as I can. I have over 20 plants and yes, they each have names. I play guitar and I'm currently fiddling with Samba and Bossa Nova. I don't play sax all that much anymore but it is one of my new year's resolutions every year. I have a cat and her name is Chloe 🐱, she's all black and she's perfect. I live in arguably the greatest city in the world (fight me if you disagree) and I enjoy exploring it with my girlfriend.</p>
         </section>
 
         <!-- Find me -->
         <section>
-            <div class="section-label">Find me</div>
-            <h2>Get in touch</h2>
+            <div class="section-label">Links</div>
+            <h2>Click away</h2>
             <div class="find-me-links">
-                <a class="find-me-link" href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank">
-                    <span class="icon">📄</span>
-                    <span class="label">Download PDF Resume</span>
-                    <span class="arrow">↓</span>
+                <a class="find-me-link" href="https://neilchvz.github.io/infrastructure-portfolio" target="_blank">
+                    <span class="icon">🗂️</span>
+                    <span class="label">Portfolio</span>
+                    <span class="arrow">↗</span>
+                </a>
+                <a class="find-me-link" href="https://neilchvz.github.io/hire" target="_blank">
+                    <span class="icon">👋</span>
+                    <span class="label">About Me</span>
+                    <span class="arrow">↗</span>
                 </a>
                 <a class="find-me-link" href="https://www.linkedin.com/in/neilchvz/" target="_blank">
                     <span class="icon">💼</span>
@@ -754,17 +727,12 @@
                 </a>
                 <a class="find-me-link" href="mailto:neilchvz.it@gmail.com">
                     <span class="icon">✉️</span>
-                    <span class="label">neilchvz.it@gmail.com</span>
+                    <span class="label">Email Me</span>
                     <span class="arrow">↗</span>
                 </a>
                 <a class="find-me-link" href="https://github.com/neilchvz" target="_blank">
                     <span class="icon">💻</span>
                     <span class="label">GitHub</span>
-                    <span class="arrow">↗</span>
-                </a>
-                <a class="find-me-link" href="https://neilchvz.github.io/hire" target="_blank">
-                    <span class="icon">👋</span>
-                    <span class="label">About Me</span>
                     <span class="arrow">↗</span>
                 </a>
             </div>
