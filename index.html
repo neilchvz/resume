@@ -587,15 +587,21 @@
                     <div class="timeline-company">Production Monitoring System</div>
                     <div class="timeline-role">Automation & Alerting</div>
                     <ul class="timeline-bullets">
-                        <li>Built a site-aware production monitoring system with logic that routes alerts into a ticketing system via parsed email triggers — reducing noise and getting the right alert to the right place automatically.</li>
+                        <li>Designed and deployed a proactive, site-aware ISP monitoring pipeline across 15–20 client sites — detecting internet degradation before clients notice it, replacing a fully reactive process where the client called first.</li>
+                        <li>Scoped monitoring to a single designated stationary office device per site using Addigy Flex Policy serial number targeting — eliminating result noise from laptops, mobile devices, and remote workers.</li>
+                        <li>Engineered per-client alert thresholds derived from full network stack analysis: contracted ISP speed, firewall hardware ceiling, AMP/IDP overhead, and client VPN impact — not a blanket percentage applied uniformly.</li>
+                        <li>Structured alert naming acts as the routing mechanism — ConnectWise email parser reads the subject line to automatically associate the correct client, assign the NOC board, apply SLA, and trigger 24x7 on-call paging for critical clients. Zero manual handling between alert and ticket.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-company">Onboarding Automation</div>
-                    <div class="timeline-role">Device Management & RMM</div>
+                    <div class="timeline-company">M365 Offboarding Automation</div>
+                    <div class="timeline-role">Identity & Workflow Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Developed onboarding automation using MDM and RMM tooling that reduced L1 technician hands-on time to 30–40 minutes per deployment across major clients — down from a fully manual process.</li>
+                        <li>Built an interactive PowerShell offboarding script that guides L1 technicians through a complete M365 user offboard via step-by-step prompts — no technical M365 knowledge required beyond answering questions.</li>
+                        <li>Supports both hybrid (on-prem AD + Entra ID) and cloud-only environments — detects which it's dealing with and executes the appropriate steps, including domain controller reachability checks for hybrid clients.</li>
+                        <li>Handles the full offboard in a single run: account disable, session revocation, group removal, mailbox conversion to Shared, GAL suppression, litigation hold, mailbox access grants, mail forwarding, OneDrive access transfer, and license removal — sequenced deliberately to prevent license-removal from breaking dependent steps.</li>
+                        <li>Produces a structured audit summary at completion — password, removed licenses, stripped groups, permissions granted, and OneDrive access link — ready to paste directly into the ticket note. Reduced average offboard time from 1–1.5 hours to under 20 minutes.</li>
                     </ul>
                 </div>
 
