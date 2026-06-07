@@ -492,7 +492,7 @@
                         <li>Built Azure infrastructure across client environments including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts with SFTP layers.</li>
                         <li>Built an interactive M365 offboarding automation reducing hands-on technician time from 1–1.5 hours to under 20 minutes — handling account disable, license removal, mailbox conversion, OneDrive transfer, and audit output in a single prompted workflow supporting both hybrid and cloud-only environments.</li>
                         <li>Designed a site-aware ISP monitoring pipeline across 15–20 client sites using Addigy Device Facts and structured alert routing into ConnectWise — shifting internet degradation detection from reactive to proactive with automated on-call paging for 24x7 clients.</li>
-                        <li>Authored macOS fleet automation including a self-healing FileVault remediation that automatically flags, groups, and remediates non-compliant devices and escrows recovery keys.</li>
+                        <li>Designed continuous FileVault compliance automation across managed macOS fleets using Addigy Flex Policies and Escrow Buddy (Netflix) — automatically detecting and remediating both disabled FileVault and missing key escrow conditions without technician involvement.</li>
                         <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored evaluations and phased remediation plans across DLP, ITDR, PAM, and SaaS backup.</li>
                     </ul>
                 </div>
@@ -577,10 +577,13 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-company">Self-Healing FileVault Remediation</div>
-                    <div class="timeline-role">macOS Automation</div>
+                    <div class="timeline-company">FileVault Compliance Automation</div>
+                    <div class="timeline-role">macOS Security & MDM Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Created a production macOS automation workflow to resolve two problems: devices not having FileVault enabled and technicians having to manually identify and remediate them. The workflow automatically flagged non-compliant devices, grouped them, and deployed an app instructed to enable FileVault and escrow the recovery keys directly to the device record on the MDM platform — removing the manual human element entirely.</li>
+                        <li>Designed two continuous Addigy Flex Policies to detect and remediate FileVault compliance gaps across managed macOS fleets — covering devices with FileVault disabled and devices encrypted before MDM enrollment with no recovery key escrowed.</li>
+                        <li>Policy 1 targets devices with FileVault on but no key escrowed — deploying Escrow Buddy (open-source, built by Netflix's Mac engineering team) to silently rotate and escrow the recovery key at the user's next login, then uninstalling itself automatically. Zero user-facing prompts.</li>
+                        <li>Policy 2 targets devices with FileVault off entirely — deploying an MDM profile that enables FileVault via deferred enablement and escrows the key to Addigy at the same time. Users are walked through a logout/login credential prompt and receive a branded IT notification explaining the change.</li>
+                        <li>Both policies run continuously and indefinitely — devices that fall out of compliance for any reason are detected and remediated automatically on the next Addigy check-in. No scheduled audits, no manual intervention, no maintenance overhead.</li>
                     </ul>
                 </div>
 
