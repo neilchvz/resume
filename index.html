@@ -648,7 +648,7 @@
                         <li>Built a production identity platform on cairahq.com from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code.</li>
                         <li>Configured SAML SSO federation between Okta and Google Workspace and automated user provisioning into Google Workspace via SCIM.</li>
                         <li>Implemented NIST 800-63B aligned password and session policies — no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
-                        <li>Deployed custom domains across the environment: okta.cairahq.com (Okta tenant), mail/drive/calendar.cairahq.com (Google Workspace vanity URLs). Documented known platform limitations and production-grade fixes for each.</li>
+                        <li>Deployed custom domains across the environment: okta.cairahq.com (Okta tenant), mail/drive/calendar.cairahq.com (Google Workspace vanity URLs). Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration — not covered in official documentation, required SAML assertion inspection to identify.</li>
                     </ul>
                 </div>
 
