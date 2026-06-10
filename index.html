@@ -557,7 +557,7 @@
         <!-- What I've built -->
         <section>
             <div class="section-label">What I've built</div>
-            <h2>Projects & implementations</h2>
+            <h2>Client Projects & Implementations</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -625,11 +625,30 @@
                     </ul>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Personal Projects -->
+        <section>
+            <h2>Personal Projects & Implementations</h2>
+            <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-company">Personal Brand & Portfolio Site</div>
                     <div class="timeline-role">Web Development & GitHub Pages</div>
                     <ul class="timeline-bullets">
                         <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using HTML, CSS, and GitHub Pages. Managed with Git — SSH authentication, repo structure, version control workflow.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Caira HQ — Identity Platform</div>
+                    <div class="timeline-role">Identity Lab · Okta · Google Workspace · SAML · SCIM</div>
+                    <ul class="timeline-bullets">
+                        <li>Built a production-style identity platform on a personal domain (cairahq.com) from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, with SCIM provisioning, NIST-aligned security policies, and custom domains. Designed to mirror how modern SaaS companies manage identity and access.</li>
+                        <li>Configured SAML SSO federation between Okta and Google Workspace and set up SCIM provisioning — resolving a non-obvious integration mismatch that required SAML assertion inspection to diagnose.</li>
+                        <li>Implemented NIST 800-63B aligned password and session policies — no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
+                        <li>Deployed custom domains across the environment: okta.cairahq.com (Okta tenant), mail/drive/calendar.cairahq.com (Google Workspace vanity URLs). Documented known platform limitations and production-grade fixes for each.</li>
                     </ul>
                 </div>
 
@@ -643,7 +662,7 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name">Identity & Access</div>
-                    <div class="skill-desc">Entra ID, Conditional Access, SSO, RBAC, MFA, BYOD & app protection policies</div>
+                    <div class="skill-desc">Entra ID, Okta, Conditional Access, SSO, SAML, SCIM, RBAC, MFA, BYOD & app protection policies</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Cloud Platforms</div>
