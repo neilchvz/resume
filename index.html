@@ -643,12 +643,13 @@
 
                 <div class="timeline-item">
                     <div class="timeline-company">Caira HQ Platform</div>
-                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform</div>
+                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP Terraform</div>
                     <ul class="timeline-bullets">
-                        <li>Built a production identity platform on cairahq.com from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code.</li>
-                        <li>Configured SAML SSO federation between Okta and Google Workspace and automated user provisioning into Google Workspace via SCIM.</li>
+                        <li>Built a production identity platform on cairahq.com from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
+                        <li>Managed Okta identity infrastructure as code using Terraform — users, groups, and app assignments declared in HCL, provisioned via the Okta provider, with state stored remotely in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration — adding a user requires no code changes, only a new row.</li>
+                        <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform — all infrastructure changes flow through pull requests with automated format checks, validation, and plan output before a human approval gate triggers apply. No changes reach production without passing automated checks and explicit review.</li>
                         <li>Implemented NIST 800-63B aligned password and session policies — no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
-                        <li>Deployed custom domains across the environment: okta.cairahq.com (Okta tenant), mail/drive/calendar.cairahq.com (Google Workspace vanity URLs). Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration — not covered in official documentation, required SAML assertion inspection to identify.</li>
+                        <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration — not covered in official documentation, required SAML assertion inspection to identify.</li>
                     </ul>
                 </div>
 
@@ -677,8 +678,8 @@
                     <div class="skill-desc">NIST Risk Assessments, Zero Trust, DLP (Purview), ITDR, PAM, email security</div>
                 </div>
                 <div class="skill-item">
-                    <div class="skill-name">Automation</div>
-                    <div class="skill-desc">PowerShell, Bash, Terraform, Git/GitHub, RMM/MDM automation, workflow design</div>
+                    <div class="skill-name">Automation & IaC</div>
+                    <div class="skill-desc">PowerShell, Bash, Terraform, HCP Terraform, GitHub Actions, Git/GitHub, GitOps, CI/CD pipelines, RMM/MDM automation, workflow design</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Infrastructure</div>
