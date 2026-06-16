@@ -439,7 +439,7 @@
                 <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12px; color: #888880; text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">Download PDF Resume</a>
             </div>
             <h1>Neil Chavez</h1>
-            <div class="subtitle">Senior Infrastructure Engineer · New York, NY</div>
+            <div class="subtitle">Senior IT Engineer · New York, NY</div>
             <div class="header-links">
                 <a href="https://neilchvz.github.io/infrastructure-portfolio" target="_blank">Portfolio</a>
                 <a href="https://neilchvz.github.io/hire" target="_blank">About Me</a>
@@ -454,7 +454,7 @@
         <section>
             <div class="section-label">Who am I</div>
             <h2>A bit about me</h2>
-            <p>I'm a Senior Infrastructure Engineer with 7+ years of experience across identity, cloud platforms, and environment design, built entirely through hands-on work across dozens of client environments.</p>
+            <p>I'm a Senior IT Engineer with 7+ years of experience across identity, cloud platforms, and environment design, built entirely through hands-on work across dozens of client environments.</p>
             <p>My background is MSP, which means I've seen more complexity, variety, and operational pressure than most internal engineers have ever encountered. I've architected 30+ cloud environments, owned IAM design from end to end, and built automation workflows that eliminate manual touchpoints across device management and security. My current title is Director-level, but my day-to-day is still entirely hands-on. I'm the one designing and building, not just overseeing.</p>
         </section>
 
@@ -643,13 +643,15 @@
 
                 <div class="timeline-item">
                     <div class="timeline-company">Caira HQ Platform</div>
-                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP Terraform</div>
+                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP Terraform · Okta Workflows · TypeScript · Node.js · Railway</div>
                     <ul class="timeline-bullets">
                         <li>Built a production identity platform on cairahq.com from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
                         <li>Managed Okta identity infrastructure as code using Terraform — users, groups, and app assignments declared in HCL, provisioned via the Okta provider, with state stored remotely in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration — adding a user requires no code changes, only a new row.</li>
                         <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform — all infrastructure changes flow through pull requests with automated format checks, validation, and plan output before a human approval gate triggers apply. No changes reach production without passing automated checks and explicit review.</li>
                         <li>Implemented NIST 800-63B aligned password and session policies — no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
                         <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration — not covered in official documentation, required SAML assertion inspection to identify.</li>
+                        <li>Built event-driven identity lifecycle automation using Okta Workflows — user creation triggers an admin notification and personalized welcome email, user deactivation triggers an offboarding alert. All flows use a Read User step to fetch full profile data at runtime.</li>
+                        <li>Built a TypeScript onboarding and offboarding service hosted on Railway — a web UI that takes form input, reads the live user roster CSV from GitHub via the API, commits the change to a new branch, and opens a pull request automatically. Terraform provisions the user on merge. Access protected by basic auth with Okta SSO as the planned production upgrade.</li>
                     </ul>
                 </div>
 
@@ -663,7 +665,7 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name">Identity & Access</div>
-                    <div class="skill-desc">Entra ID, Okta, Conditional Access, SSO, SAML, SCIM, RBAC, MFA, BYOD & app protection policies</div>
+                    <div class="skill-desc">Entra ID, Okta, Okta Workflows, Conditional Access, SSO, SAML, SCIM, RBAC, MFA, BYOD & app protection policies</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Cloud Platforms</div>
@@ -679,7 +681,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Automation & IaC</div>
-                    <div class="skill-desc">PowerShell, Bash, Terraform, HCP Terraform, GitHub Actions, Git/GitHub, GitOps, CI/CD pipelines, RMM/MDM automation, workflow design</div>
+                    <div class="skill-desc">PowerShell, Bash, TypeScript, Node.js, Terraform, HCP Terraform, GitHub Actions, Git/GitHub, GitOps, CI/CD pipelines, Railway, RMM/MDM automation, workflow design</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Infrastructure</div>
