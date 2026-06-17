@@ -447,7 +447,7 @@
                 <a href="https://www.linkedin.com/in/neilchvz/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/neilchvz" target="_blank">GitHub</a>
             </div>
-            <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">Welcome 👋<br>The LinkedIn version was the trailer — this is the full film.<br>Pull up a chair and grab a coffee.</p>
+            <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">Welcome 👋<br>The LinkedIn version was the trailer. This is the full film.<br>Pull up a chair and grab a coffee.</p>
         </header>
 
         <!-- Who am I -->
@@ -455,7 +455,7 @@
             <div class="section-label">Who am I</div>
             <h2>A bit about me</h2>
             <p>I’m a Senior IT Engineer with 7+ years of experience across identity, endpoint security, and cloud platforms all built entirely through hands-on work across dozens of client environments. My background is in MSP which means I have deep exposure to complexity, variety, and operational pressure that most internal engineers have never encountered. My current title is Director-level, but my day-to-day remains entirely hands-on. I’m designing and building, not just overseeing.</p>
-            <p>I’m currently building and running a production identity platform on cairahq.com — Okta federated to Google Workspace via SAML, SCIM provisioning, Terraform-managed infrastructure with a full GitHub Actions CI/CD pipeline, and event-driven lifecycle automation via Okta Workflows. A functioning environment built around the same principles I'm looking to work with in production.</p>
+            <p>I’m currently building and running a production identity platform on cairahq.com: Okta federated to Google Workspace via SAML, SCIM provisioning, Terraform-managed infrastructure with a full GitHub Actions CI/CD pipeline, and event-driven lifecycle automation via Okta Workflows. A functioning environment built around the same principles I'm looking to work with in production.</p>
         </section>
 
         <!-- What's next -->
@@ -581,10 +581,10 @@
                     <div class="timeline-company">FileVault Compliance Automation</div>
                     <div class="timeline-role">macOS Security & MDM Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Designed two continuous Addigy Flex Policies to detect and remediate FileVault compliance gaps across managed macOS fleets — covering devices with FileVault disabled and devices encrypted before MDM enrollment with no recovery key escrowed.</li>
-                        <li>Policy 1 targets devices with FileVault on but no key escrowed — deploying Escrow Buddy (open-source, built by Netflix's Mac engineering team) to silently rotate and escrow the recovery key at the user's next login, then uninstalling itself automatically. Zero user-facing prompts.</li>
-                        <li>Policy 2 targets devices with FileVault off entirely — deploying an MDM profile that enables FileVault via deferred enablement and escrows the key to Addigy at the same time. Users are walked through a logout/login credential prompt and receive a branded IT notification explaining the change.</li>
-                        <li>Both policies run continuously and indefinitely — devices that fall out of compliance for any reason are detected and remediated automatically on the next Addigy check-in. No scheduled audits, no manual intervention, no maintenance overhead.</li>
+                        <li>Designed two continuous Addigy Flex Policies to detect and remediate FileVault compliance gaps across managed macOS fleets, covering devices with FileVault disabled and devices encrypted before MDM enrollment with no recovery key escrowed.</li>
+                        <li>Policy 1 targets devices with FileVault on but no key escrowed. Deploys Escrow Buddy (open-source, built by Netflix's Mac engineering team) to silently rotate and escrow the recovery key at the user's next login, then uninstalls itself automatically. Zero user-facing prompts.</li>
+                        <li>Policy 2 targets devices with FileVault off entirely. Deploys an MDM profile that enables FileVault via deferred enablement and escrows the key to Addigy at the same time. Users are walked through a logout/login credential prompt and receive a branded IT notification explaining the change.</li>
+                        <li>Both policies run continuously and indefinitely. Devices that fall out of compliance for any reason are detected and remediated automatically on the next Addigy check-in. No scheduled audits, no manual intervention, no maintenance overhead.</li>
                     </ul>
                 </div>
 
@@ -592,10 +592,10 @@
                     <div class="timeline-company">Production Monitoring System</div>
                     <div class="timeline-role">Automation & Alerting</div>
                     <ul class="timeline-bullets">
-                        <li>Designed and deployed a proactive, site-aware ISP monitoring pipeline across 15–20 client sites — detecting internet degradation before clients notice it, replacing a fully reactive process where the client called first.</li>
-                        <li>Scoped monitoring to a single designated stationary office device per site using Addigy Flex Policy serial number targeting — eliminating result noise from laptops, mobile devices, and remote workers.</li>
-                        <li>Engineered per-client alert thresholds derived from full network stack analysis: contracted ISP speed, firewall hardware ceiling, AMP/IDP overhead, and client VPN impact — not a blanket percentage applied uniformly.</li>
-                        <li>Structured alert naming acts as the routing mechanism — ConnectWise email parser reads the subject line to automatically associate the correct client, assign the NOC board, apply SLA, and trigger 24x7 on-call paging for critical clients. Zero manual handling between alert and ticket.</li>
+                        <li>Designed and deployed a proactive, site-aware ISP monitoring pipeline across 15-20 client sites, detecting internet degradation before clients notice it and replacing a fully reactive process where the client called first.</li>
+                        <li>Scoped monitoring to a single designated stationary office device per site using Addigy Flex Policy serial number targeting, eliminating result noise from laptops, mobile devices, and remote workers.</li>
+                        <li>Engineered per-client alert thresholds derived from full network stack analysis: contracted ISP speed, firewall hardware ceiling, AMP/IDP overhead, and client VPN impact. Not a blanket percentage applied uniformly.</li>
+                        <li>Structured alert naming acts as the routing mechanism. ConnectWise email parser reads the subject line to automatically associate the correct client, assign the NOC board, apply SLA, and trigger 24x7 on-call paging for critical clients. Zero manual handling between alert and ticket.</li>
                     </ul>
                 </div>
 
@@ -603,10 +603,10 @@
                     <div class="timeline-company">M365 Offboarding Automation</div>
                     <div class="timeline-role">Identity & Workflow Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Built an interactive PowerShell offboarding script that guides L1 technicians through a complete M365 user offboard via step-by-step prompts — no technical M365 knowledge required beyond answering questions.</li>
-                        <li>Supports both hybrid (on-prem AD + Entra ID) and cloud-only environments — detects which it's dealing with and executes the appropriate steps, including domain controller reachability checks for hybrid clients.</li>
-                        <li>Handles the full offboard in a single run: account disable, session revocation, group removal, mailbox conversion to Shared, GAL suppression, litigation hold, mailbox access grants, mail forwarding, OneDrive access transfer, and license removal — sequenced deliberately to prevent license-removal from breaking dependent steps.</li>
-                        <li>Produces a structured audit summary at completion — password, removed licenses, stripped groups, permissions granted, and OneDrive access link — ready to paste directly into the ticket note. Reduced average offboard time from 1–1.5 hours to under 20 minutes.</li>
+                        <li>Built an interactive PowerShell offboarding script that guides L1 technicians through a complete M365 user offboard via step-by-step prompts. No technical M365 knowledge required beyond answering questions.</li>
+                        <li>Supports both hybrid (on-prem AD + Entra ID) and cloud-only environments, detecting which it's dealing with and executing the appropriate steps, including domain controller reachability checks for hybrid clients.</li>
+                        <li>Handles the full offboard in a single run: account disable, session revocation, group removal, mailbox conversion to Shared, GAL suppression, litigation hold, mailbox access grants, mail forwarding, OneDrive access transfer, and license removal. Sequenced deliberately to prevent license removal from breaking dependent steps.</li>
+                        <li>Produces a structured audit summary at completion: password, removed licenses, stripped groups, permissions granted, and OneDrive access link, ready to paste directly into the ticket note. Reduced average offboard time from 1-1.5 hours to under 20 minutes.</li>
                     </ul>
                 </div>
 
@@ -622,7 +622,7 @@
                     <div class="timeline-company">Conditional Access & IAM Design</div>
                     <div class="timeline-role">Identity & Access Management</div>
                     <ul class="timeline-bullets">
-                        <li>Owned Conditional Access policy design across client environments — MFA enforcement on compliant devices, geo-blocking, Zero Trust principles, and enterprise app SSO integrations via Entra ID.</li>
+                        <li>Owned Conditional Access policy design across client environments, including MFA enforcement on compliant devices, geo-blocking, Zero Trust principles, and enterprise app SSO integrations via Entra ID.</li>
                     </ul>
                 </div>
 
@@ -638,7 +638,7 @@
                     <div class="timeline-company">Personal Brand & Portfolio Site</div>
                     <div class="timeline-role">Web Development & GitHub Pages</div>
                     <ul class="timeline-bullets">
-                        <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using HTML, CSS, and GitHub Pages. Managed with Git — SSH authentication, repo structure, version control workflow.</li>
+                        <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using HTML, CSS, and GitHub Pages. Managed with Git: SSH authentication, repo structure, and version control workflow.</li>
                     </ul>
                 </div>
 
@@ -646,13 +646,13 @@
                     <div class="timeline-company">Caira HQ Platform</div>
                     <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP Terraform · Okta Workflows · TypeScript · Node.js · Railway</div>
                     <ul class="timeline-bullets">
-                        <li>Built a production identity platform on cairahq.com from scratch — Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
-                        <li>Managed Okta identity infrastructure as code using Terraform — users, groups, and app assignments declared in HCL, provisioned via the Okta provider, with state stored remotely in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration — adding a user requires no code changes, only a new row.</li>
-                        <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform — all infrastructure changes flow through pull requests with automated format checks, validation, and plan output before a human approval gate triggers apply. No changes reach production without passing automated checks and explicit review.</li>
-                        <li>Implemented NIST 800-63B aligned password and session policies — no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
-                        <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration — not covered in official documentation, required SAML assertion inspection to identify.</li>
-                        <li>Built event-driven identity lifecycle automation using Okta Workflows — user creation triggers an admin notification and personalized welcome email, user deactivation triggers an offboarding alert. All flows use a Read User step to fetch full profile data at runtime.</li>
-                        <li>Built a TypeScript onboarding and offboarding service hosted on Railway — a web UI that takes form input, reads the live user roster CSV from GitHub via the API, commits the change to a new branch, and opens a pull request automatically. Terraform provisions the user on merge. Access protected by basic auth with Okta SSO as the planned production upgrade.</li>
+                        <li>Built a production identity platform on cairahq.com from scratch: Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
+                        <li>Managed Okta identity infrastructure as code using Terraform: users, groups, and app assignments declared in HCL, provisioned via the Okta provider, with state stored remotely in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration, where adding a user requires no code changes, only a new row.</li>
+                        <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform: all infrastructure changes flow through pull requests with automated format checks, validation, and plan output before a human approval gate triggers apply. No changes reach production without passing automated checks and explicit review.</li>
+                        <li>Implemented NIST 800-63B aligned password and session policies: no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
+                        <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration. Not covered in official documentation, required SAML assertion inspection to identify.</li>
+                        <li>Built event-driven identity lifecycle automation using Okta Workflows: user creation triggers an admin notification and personalized welcome email, user deactivation triggers an offboarding alert. All flows use a Read User step to fetch full profile data at runtime.</li>
+                        <li>Built a TypeScript onboarding and offboarding service hosted on Railway: a web UI that takes form input, reads the live user roster CSV from GitHub via the API, commits the change to a new branch, and opens a pull request automatically. Terraform provisions the user on merge. Access protected by basic auth with Okta SSO as the planned production upgrade.</li>
                     </ul>
                 </div>
 
@@ -706,7 +706,7 @@
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Cisco Certified Meraki Network Associate (CMNA) · 2021</div>
-                    <div class="skill-desc">Meraki networking fundamentals — switching, wireless, security appliances, and cloud management.</div>
+                    <div class="skill-desc">Meraki networking fundamentals: switching, wireless, security appliances, and cloud management.</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Addigy Certified Expert (ACE) · 2024</div>
