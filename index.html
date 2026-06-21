@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume — Neil Chavez</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text y='68' x='50' text-anchor='middle' font-size='52' font-family='Georgia,serif' font-weight='400' fill='%23c9a96e'>&gt;_</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a0a0a'/><text y='68' x='50' text-anchor='middle' font-size='52' font-family='Georgia,serif' font-weight='400' fill='%23c9a96e'>&gt;_</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --bg: #0a0a0a;
@@ -25,8 +29,15 @@
             --green-light: #6aab7a;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background-color: var(--bg);
@@ -41,15 +52,21 @@
         body::before {
             content: '';
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 1000;
             opacity: 0.4;
         }
 
-        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
         header {
             padding: 80px 0 0;
@@ -75,7 +92,11 @@
             margin-bottom: 24px;
         }
 
-        .header-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .header-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
         .header-links a {
             font-family: 'DM Mono', monospace;
@@ -89,8 +110,14 @@
             gap: 6px;
         }
 
-        .header-links a:hover { color: var(--accent-warm); }
-        .header-links a::before { content: '↗'; font-size: 10px; }
+        .header-links a:hover {
+            color: var(--accent-warm);
+        }
+
+        .header-links a::before {
+            content: '↗';
+            font-size: 10px;
+        }
 
         section {
             padding: 56px 0;
@@ -98,7 +125,9 @@
             animation: fadeUp 0.8s ease forwards;
         }
 
-        section:last-of-type { border-bottom: none; }
+        section:last-of-type {
+            border-bottom: none;
+        }
 
         .section-label {
             font-family: 'DM Mono', monospace;
@@ -126,10 +155,16 @@
             line-height: 1.8;
         }
 
-        p:last-child { margin-bottom: 0; }
+        p:last-child {
+            margin-bottom: 0;
+        }
 
         /* Timeline */
-        .timeline { display: flex; flex-direction: column; gap: 2px; }
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
         .timeline-item {
             background: var(--bg-card);
@@ -138,9 +173,18 @@
             transition: background 0.2s ease, border-color 0.2s ease;
         }
 
-        .timeline-item:first-child { border-radius: 8px 8px 0 0; }
-        .timeline-item:last-child { border-radius: 0 0 8px 8px; }
-        .timeline-item:hover { background: var(--bg-hover); border-color: #2a2a2a; }
+        .timeline-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .timeline-item:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .timeline-item:hover {
+            background: var(--bg-hover);
+            border-color: #2a2a2a;
+        }
 
         .timeline-company {
             font-family: 'DM Serif Display', serif;
@@ -216,7 +260,10 @@
         }
 
         /* Skills grid */
-        .skills-grid { display: grid; gap: 2px; }
+        .skills-grid {
+            display: grid;
+            gap: 2px;
+        }
 
         .skill-item {
             background: var(--bg-card);
@@ -225,9 +272,17 @@
             transition: background 0.2s ease, border-color 0.2s ease;
         }
 
-        .skill-item:first-child { border-radius: 8px 8px 0 0; }
-        .skill-item:last-child { border-radius: 0 0 8px 8px; }
-        .skill-item:hover { background: var(--bg-hover); }
+        .skill-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .skill-item:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .skill-item:hover {
+            background: var(--bg-hover);
+        }
 
         .skill-name {
             font-family: 'DM Mono', monospace;
@@ -246,7 +301,9 @@
         }
 
         /* Workbench */
-        .workbench-block { margin-top: 32px; }
+        .workbench-block {
+            margin-top: 32px;
+        }
 
         .workbench-divider-row {
             display: flex;
@@ -311,8 +368,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         /* Note card */
@@ -351,7 +415,11 @@
         }
 
         /* Find me */
-        .find-me-links { display: flex; flex-direction: column; gap: 2px; }
+        .find-me-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
         .find-me-link {
             display: flex;
@@ -366,8 +434,13 @@
             transition: all 0.2s ease;
         }
 
-        .find-me-link:first-child { border-radius: 8px 8px 0 0; }
-        .find-me-link:last-child { border-radius: 0 0 8px 8px; }
+        .find-me-link:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .find-me-link:last-child {
+            border-radius: 0 0 8px 8px;
+        }
 
         .find-me-link:hover {
             background: var(--bg-hover);
@@ -375,13 +448,35 @@
             border-color: #2a2a2a;
         }
 
-        .find-me-link .icon { font-size: 18px; width: 28px; text-align: center; }
-        .find-me-link .label { font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: 0.05em; }
-        .find-me-link .arrow { margin-left: auto; color: var(--text-muted); font-size: 12px; transition: transform 0.2s ease, color 0.2s ease; }
-        .find-me-link:hover .arrow { transform: translate(2px, -2px); color: var(--accent-warm); }
+        .find-me-link .icon {
+            font-size: 18px;
+            width: 28px;
+            text-align: center;
+        }
+
+        .find-me-link .label {
+            font-family: 'DM Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .find-me-link .arrow {
+            margin-left: auto;
+            color: var(--text-muted);
+            font-size: 12px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .find-me-link:hover .arrow {
+            transform: translate(2px, -2px);
+            color: var(--accent-warm);
+        }
 
         /* Footer */
-        footer { padding: 40px 0; text-align: center; }
+        footer {
+            padding: 40px 0;
+            text-align: center;
+        }
 
         footer p {
             font-family: 'DM Mono', monospace;
@@ -407,36 +502,95 @@
 
         /* Animations */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes blink {
-            0%, 49% { opacity: 0.6; }
-            50%, 100% { opacity: 0; }
+
+            0%,
+            49% {
+                opacity: 0.6;
+            }
+
+            50%,
+            100% {
+                opacity: 0;
+            }
         }
 
-        section:nth-child(1) { animation-delay: 0.1s; opacity: 0; animation-fill-mode: forwards; }
-        section:nth-child(2) { animation-delay: 0.15s; opacity: 0; animation-fill-mode: forwards; }
-        section:nth-child(3) { animation-delay: 0.2s; opacity: 0; animation-fill-mode: forwards; }
-        section:nth-child(4) { animation-delay: 0.25s; opacity: 0; animation-fill-mode: forwards; }
-        section:nth-child(5) { animation-delay: 0.3s; opacity: 0; animation-fill-mode: forwards; }
-        section:nth-child(6) { animation-delay: 0.35s; opacity: 0; animation-fill-mode: forwards; }
+        section:nth-child(1) {
+            animation-delay: 0.1s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(2) {
+            animation-delay: 0.15s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(3) {
+            animation-delay: 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(4) {
+            animation-delay: 0.25s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(5) {
+            animation-delay: 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        section:nth-child(6) {
+            animation-delay: 0.35s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
 
         @media (max-width: 600px) {
-            header { padding: 48px 0 0; }
-            section { padding: 40px 0; }
-            .skill-item { flex-direction: column; gap: 6px; }
-            .skill-name { min-width: unset; }
+            header {
+                padding: 48px 0 0;
+            }
+
+            section {
+                padding: 40px 0;
+            }
+
+            .skill-item {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .skill-name {
+                min-width: unset;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
 
         <header>
             <div style="display: flex; justify-content: flex-end; margin-bottom: 0;">
-                <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank" style="font-family: 'DM Mono', monospace; font-size: 12px; color: #888880; text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">Download PDF Resume</a>
+                <a href="https://neilchvz.github.io/resume/neil-chavez-resume.pdf" target="_blank"
+                    style="font-family: 'DM Mono', monospace; font-size: 12px; color: #888880; text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">Download
+                    PDF Resume</a>
             </div>
             <h1>Neil Chavez</h1>
             <div class="subtitle">Senior IT Engineer · New York, NY</div>
@@ -447,22 +601,34 @@
                 <a href="https://www.linkedin.com/in/neilchvz/" target="_blank">LinkedIn</a>
                 <a href="https://github.com/neilchvz" target="_blank">GitHub</a>
             </div>
-            <p style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">Welcome 👋<br>The LinkedIn version was the trailer. This is the full film.<br>Pull up a chair and grab a coffee.</p>
+            <p
+                style="font-family: 'DM Serif Display', serif; font-style: italic; font-size: 17px; color: var(--text-secondary); font-weight: 300; margin-top: 28px; margin-bottom: 0; line-height: 2;">
+                Welcome 👋<br>The LinkedIn version was the trailer. This is the full film.<br>Pull up a chair and grab a
+                coffee.</p>
         </header>
 
         <!-- Who am I -->
         <section>
             <div class="section-label">Who am I</div>
             <h2>A bit about me</h2>
-            <p>I’m a Senior IT Engineer with 7+ years of experience across identity, endpoint security, and cloud platforms all built entirely through hands-on work across dozens of client environments. My background is in MSP which means I have deep exposure to complexity, variety, and operational pressure that most internal engineers have never encountered. My current title is Director-level, but my day-to-day remains entirely hands-on. I’m designing and building, not just overseeing.</p>
-            <p>I’m currently building and running a production identity platform on cairahq.com: Okta federated to Google Workspace via SAML, SCIM provisioning, Terraform-managed infrastructure with a full GitHub Actions CI/CD pipeline, and event-driven lifecycle automation via Okta Workflows. A functioning environment built around the same principles I'm looking to work with in production.</p>
+            <p>I’m a Senior IT Engineer with 7+ years of experience across identity, endpoint security, and cloud
+                platforms all built entirely through hands-on work across dozens of client environments. My background
+                is in MSP which means I have deep exposure to complexity, variety, and operational pressure that most
+                internal engineers have never encountered. My current title is Director-level, but my day-to-day remains
+                entirely hands-on. I’m designing and building, not just overseeing.</p>
+            <p>I’m currently building and running a production identity platform on cairahq.com: Okta federated to
+                Google Workspace via SAML, SCIM provisioning, Terraform-managed infrastructure with a full GitHub
+                Actions CI/CD pipeline, and event-driven lifecycle automation via Okta Workflows. A functioning
+                environment built around the same principles I'm looking to work with in production.</p>
         </section>
 
         <!-- What's next -->
         <section>
             <div class="section-label">What I'm looking for</div>
             <h2>What's next for me</h2>
-            <p>What I'm focused on now is bringing that operational depth into an environment where infrastructure is managed as code and IT is treated as a platform, not a support function. I want to plant a flag at one company, see the roadmap through, and build something that lasts.</p>
+            <p>What I'm focused on now is bringing that operational depth into an environment where infrastructure is
+                managed as code and IT is treated as a platform, not a support function. I want to plant a flag at one
+                company, see the roadmap through, and build something that lasts.</p>
         </section>
 
         <!-- Work history -->
@@ -476,10 +642,15 @@
                     <div class="timeline-role">Director, Projects & Implementation</div>
                     <div class="timeline-date">Jan 2026 → Present · Remote</div>
                     <ul class="timeline-bullets">
-                        <li>Promoted into a director-level role while remaining the sole hands-on technical executor — owning architecture, implementation, and delivery end to end without a dedicated engineering team.</li>
-                        <li>Primary client-facing authority for project delivery — managing scope, expectations, and timelines across concurrent engagements.</li>
-                        <li>Contributing technical direction to long-term company strategy and operational roadmap at the executive level.</li>
-                        <li>Introduced repeatable project workflows and delivery standards to improve consistency and reduce execution overhead.</li>
+                        <li>Promoted into a director-level role while remaining the sole hands-on technical executor —
+                            owning architecture, implementation, and delivery end to end without a dedicated engineering
+                            team.</li>
+                        <li>Primary client-facing authority for project delivery — managing scope, expectations, and
+                            timelines across concurrent engagements.</li>
+                        <li>Contributing technical direction to long-term company strategy and operational roadmap at
+                            the executive level.</li>
+                        <li>Introduced repeatable project workflows and delivery standards to improve consistency and
+                            reduce execution overhead.</li>
                     </ul>
                 </div>
 
@@ -487,14 +658,30 @@
                     <div class="timeline-role">Senior Systems Engineer</div>
                     <div class="timeline-date">Oct 2022 → Dec 2025 · Remote</div>
                     <ul class="timeline-bullets">
-                        <li>Architected and deployed 30+ Microsoft 365 and Google Workspace tenant environments, including tenant-to-tenant migrations, Exchange to M365 migrations, and full AD to Azure AD transitions.</li>
-                        <li>Owned Conditional Access policy design across client environments — MFA enforcement, geo-blocking, and enterprise app SSO integrations via Entra ID.</li>
-                        <li>Administered Okta in a production client environment — configured SSO integrations, designed and implemented access and session policies for segmented user tiers (standard users, service accounts, and admins), and built Okta Workflows automation for user lifecycle events including Slack-based onboarding notifications.</li>
-                        <li>Built Azure infrastructure across client environments including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts with SFTP layers.</li>
-                        <li>Built an interactive M365 offboarding automation reducing hands-on technician time from 1–1.5 hours to under 20 minutes — handling account disable, license removal, mailbox conversion, OneDrive transfer, and audit output in a single prompted workflow supporting both hybrid and cloud-only environments.</li>
-                        <li>Designed a site-aware ISP monitoring pipeline across 15–20 client sites using Addigy Device Facts and structured alert routing into ConnectWise — shifting internet degradation detection from reactive to proactive with automated on-call paging for 24x7 clients.</li>
-                        <li>Designed continuous FileVault compliance automation across managed macOS fleets using Addigy Flex Policies and Escrow Buddy (Netflix) — automatically detecting and remediating both disabled FileVault and missing key escrow conditions without technician involvement.</li>
-                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored evaluations and phased remediation plans across DLP, ITDR, PAM, and SaaS backup.</li>
+                        <li>Architected and deployed 30+ Microsoft 365 and Google Workspace tenant environments,
+                            including tenant-to-tenant migrations, Exchange to M365 migrations, and full AD to Azure AD
+                            transitions.</li>
+                        <li>Owned Conditional Access policy design across client environments — MFA enforcement,
+                            geo-blocking, and enterprise app SSO integrations via Entra ID.</li>
+                        <li>Administered Okta in a production client environment — configured SSO integrations, designed
+                            and implemented access and session policies for segmented user tiers (standard users,
+                            service accounts, and admins), and built Okta Workflows automation for user lifecycle events
+                            including Slack-based onboarding notifications.</li>
+                        <li>Built Azure infrastructure for client environments including VNets, VMs, gateways,
+                            private DNS resolvers, Azure Files, and storage accounts with SFTP services.</li>
+                        <li>Built an interactive M365 offboarding automation reducing hands-on technician time from
+                            1–1.5 hours to under 20 minutes — handling account disable, license removal, mailbox
+                            conversion, OneDrive transfer, and audit output in a single prompted workflow supporting
+                            both hybrid and cloud-only environments.</li>
+                        <li>Designed and deployed proactive, site-aware ISP monitoring for client sites, replacing a
+                            reactive process where the client had to call first, using Addigy Device Facts and
+                            structured alert routing into ConnectWise with automated on-call paging for 24x7 clients.
+                        </li>
+                        <li>Designed continuous FileVault compliance automation across managed macOS fleets using Addigy
+                            Flex Policies and Escrow Buddy (Netflix) — automatically detecting and remediating both
+                            disabled FileVault and missing key escrow conditions without technician involvement.</li>
+                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored
+                            evaluations and phased remediation plans across DLP, ITDR, PAM, and SaaS backup.</li>
                     </ul>
                 </div>
 
@@ -502,9 +689,12 @@
                     <div class="timeline-role">Information Technology Systems Engineer</div>
                     <div class="timeline-date">Nov 2020 → Oct 2022 · Hybrid – New York, NY</div>
                     <ul class="timeline-bullets">
-                        <li>Administered cloud environments across M365 and Google Workspace including identity systems, device management, and end-user infrastructure across diverse client organizations.</li>
-                        <li>Took on independent project ownership — leading cloud tenant setup, identity integrations, and MDM rollouts as scope increased.</li>
-                        <li>Contributed to security and endpoint initiatives including MFA rollouts, device encryption, and user security awareness programs.</li>
+                        <li>Administered cloud environments across M365 and Google Workspace including identity systems,
+                            device management, and end-user infrastructure across diverse client organizations.</li>
+                        <li>Took on independent project ownership — leading cloud tenant setup, identity integrations,
+                            and MDM rollouts as scope increased.</li>
+                        <li>Contributed to security and endpoint initiatives including MFA rollouts, device encryption,
+                            and user security awareness programs.</li>
                     </ul>
                 </div>
 
@@ -512,8 +702,10 @@
                     <div class="timeline-role">IT Technician</div>
                     <div class="timeline-date">Nov 2019 → Nov 2020 · Onsite – New York, NY</div>
                     <ul class="timeline-bullets">
-                        <li>Provided hands-on support across endpoints, infrastructure, and user environments while contributing to system deployments, onboarding, and cloud platform administration.</li>
-                        <li>Built foundational skills in troubleshooting, system configuration, and technical documentation across diverse client environments.</li>
+                        <li>Provided hands-on support across endpoints, infrastructure, and user environments while
+                            contributing to system deployments, onboarding, and cloud platform administration.</li>
+                        <li>Built foundational skills in troubleshooting, system configuration, and technical
+                            documentation across diverse client environments.</li>
                     </ul>
                 </div>
 
@@ -528,8 +720,10 @@
                     <div class="timeline-role">IT Support Specialist</div>
                     <div class="timeline-date">Oct 2018 → Nov 2019 · Onsite – New York, NY</div>
                     <ul class="timeline-bullets">
-                        <li>Technical support across enterprise and mid-sized environments — Windows and macOS endpoints, business applications, and user infrastructure.</li>
-                        <li>Early exposure to identity and access management through user provisioning, application environments, and system administration tasks.</li>
+                        <li>Technical support across enterprise and mid-sized environments — Windows and macOS
+                            endpoints, business applications, and user infrastructure.</li>
+                        <li>Early exposure to identity and access management through user provisioning, application
+                            environments, and system administration tasks.</li>
                     </ul>
                 </div>
 
@@ -538,8 +732,10 @@
                     <div class="timeline-role">Technical Support & Implementation Specialist</div>
                     <div class="timeline-date">Oct 2017 → Sep 2018 · Onsite – Miami, FL</div>
                     <ul class="timeline-bullets">
-                        <li>Delivered technical support and configuration services across client environments including endpoints, document systems, and POS hardware.</li>
-                        <li>Supported cloud-connected and on-prem system deployments, building foundational skills in field implementation and system integration.</li>
+                        <li>Delivered technical support and configuration services across client environments including
+                            endpoints, document systems, and POS hardware.</li>
+                        <li>Supported cloud-connected and on-prem system deployments, building foundational skills in
+                            field implementation and system integration.</li>
                     </ul>
                 </div>
 
@@ -547,8 +743,10 @@
                     <div class="timeline-role">Printer / Copier Service Technician</div>
                     <div class="timeline-date">Sep 2015 → Oct 2017 · Onsite – Miami, FL</div>
                     <ul class="timeline-bullets">
-                        <li>Installation, maintenance, and repair of office hardware and document systems across diverse client environments.</li>
-                        <li>Built foundational technical troubleshooting skills through hands-on hardware diagnosis and field service work — the starting point of a career in technology.</li>
+                        <li>Installation, maintenance, and repair of office hardware and document systems across diverse
+                            client environments.</li>
+                        <li>Built foundational technical troubleshooting skills through hands-on hardware diagnosis and
+                            field service work — the starting point of a career in technology.</li>
                     </ul>
                 </div>
 
@@ -565,15 +763,19 @@
                     <div class="timeline-company">Azure Infrastructure Buildouts</div>
                     <div class="timeline-role">Cloud Infrastructure</div>
                     <ul class="timeline-bullets">
-                        <li>Designed, deployed and revamped Azure environments across multiple client organizations including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts with SFTP layers.</li>
+                        <li>Designed, deployed and revamped Azure environments for multiple client organizations
+                            including VNets, VMs, gateways, private DNS resolvers, Azure Files, and storage accounts
+                            with SFTP services.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-company">30+ Cloud Tenant Deployments</div>
+                    <div class="timeline-company">Cloud Tenant Deployments</div>
                     <div class="timeline-role">Microsoft 365 & Google Workspace</div>
                     <ul class="timeline-bullets">
-                        <li>Architected and deployed 30+ M365 and Google Workspace tenant environments including new tenant buildouts and security best practices, MFA roll-outs, tenant-to-tenant migrations, Hosted Exchange to Exchange Online migrations and full AD to Azure AD transitions.</li>
+                        <li>Architected and deployed M365 and Google Workspace tenant environments including new tenant
+                            buildouts and security best practices, MFA roll-outs, tenant-to-tenant migrations, Hosted
+                            Exchange to Exchange Online migrations and full AD to Azure AD transitions.</li>
                     </ul>
                 </div>
 
@@ -581,21 +783,39 @@
                     <div class="timeline-company">FileVault Compliance Automation</div>
                     <div class="timeline-role">macOS Security & MDM Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Designed two continuous Addigy Flex Policies to detect and remediate FileVault compliance gaps across managed macOS fleets, covering devices with FileVault disabled and devices encrypted before MDM enrollment with no recovery key escrowed.</li>
-                        <li>Policy 1 targets devices with FileVault on but no key escrowed. Deploys Escrow Buddy (open-source, built by Netflix's Mac engineering team) to silently rotate and escrow the recovery key at the user's next login, then uninstalls itself automatically. Zero user-facing prompts.</li>
-                        <li>Policy 2 targets devices with FileVault off entirely. Deploys an MDM profile that enables FileVault via deferred enablement and escrows the key to Addigy at the same time. Users are walked through a logout/login credential prompt and receive a branded IT notification explaining the change.</li>
-                        <li>Both policies run continuously and indefinitely. Devices that fall out of compliance for any reason are detected and remediated automatically on the next Addigy check-in. No scheduled audits, no manual intervention, no maintenance overhead.</li>
+                        <li>Built two continuous Addigy Flex Policies to detect and remediate FileVault compliance gaps
+                            on managed macOS fleets, covering devices with FileVault disabled and devices that were
+                            encrypted before MDM enrollment with no recovery key escrowed.</li>
+                        <li>Policy 1 targets devices with FileVault on but no key escrowed. It deploys Escrow Buddy
+                            (open-source, built by Netflix's Mac engineering team) to silently rotate and escrow the
+                            recovery key at the user's next login, then uninstalls itself automatically. No user-facing
+                            prompts.</li>
+                        <li>Policy 2 targets devices with FileVault off entirely. It deploys an MDM profile that enables
+                            FileVault via deferred enablement and escrows the key to Addigy at the same time. Users get
+                            walked through a logout/login credential prompt and a branded IT notification explaining the
+                            change.</li>
+                        <li>Both policies run continuously and indefinitely. Devices that fall out of compliance for any
+                            reason get detected and remediated automatically on the next Addigy check-in. No scheduled
+                            audits, no manual intervention, no maintenance overhead.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-company">Production Monitoring System</div>
-                    <div class="timeline-role">Automation & Alerting</div>
+                    <div class="timeline-company">Throughput Monitoring & Alert Routing</div>
+                    <div class="timeline-role">Proactive Monitoring & Alerting</div>
                     <ul class="timeline-bullets">
-                        <li>Designed and deployed a proactive, site-aware ISP monitoring pipeline across 15-20 client sites, detecting internet degradation before clients notice it and replacing a fully reactive process where the client called first.</li>
-                        <li>Scoped monitoring to a single designated stationary office device per site using Addigy Flex Policy serial number targeting, eliminating result noise from laptops, mobile devices, and remote workers.</li>
-                        <li>Engineered per-client alert thresholds derived from full network stack analysis: contracted ISP speed, firewall hardware ceiling, AMP/IDP overhead, and client VPN impact. Not a blanket percentage applied uniformly.</li>
-                        <li>Structured alert naming acts as the routing mechanism. ConnectWise email parser reads the subject line to automatically associate the correct client, assign the NOC board, apply SLA, and trigger 24x7 on-call paging for critical clients. Zero manual handling between alert and ticket.</li>
+                        <li>Designed and deployed proactive, site-aware ISP monitoring for client sites, catching
+                            internet degradation before clients notice it and replacing a fully reactive process where
+                            the client had to call first.</li>
+                        <li>Limited monitoring to a single designated stationary office device per site using Addigy
+                            Flex Policy serial number targeting, removing result noise from laptops, mobile devices, and
+                            remote workers.</li>
+                        <li>Calculated a custom alert threshold for each client based on their actual network setup:
+                            contracted ISP speed, firewall hardware ceiling, AMP/IDP overhead, and client VPN impact,
+                            instead of just applying one flat percentage to everyone.</li>
+                        <li>The alert's subject line does the routing. ConnectWise reads it to identify the client,
+                            assign the right board, apply the SLA, and page on-call for 24x7 clients automatically. No
+                            manual handling between alert and ticket.</li>
                     </ul>
                 </div>
 
@@ -603,10 +823,19 @@
                     <div class="timeline-company">M365 Offboarding Automation</div>
                     <div class="timeline-role">Identity & Workflow Automation</div>
                     <ul class="timeline-bullets">
-                        <li>Built an interactive PowerShell offboarding script that guides L1 technicians through a complete M365 user offboard via step-by-step prompts. No technical M365 knowledge required beyond answering questions.</li>
-                        <li>Supports both hybrid (on-prem AD + Entra ID) and cloud-only environments, detecting which it's dealing with and executing the appropriate steps, including domain controller reachability checks for hybrid clients.</li>
-                        <li>Handles the full offboard in a single run: account disable, session revocation, group removal, mailbox conversion to Shared, GAL suppression, litigation hold, mailbox access grants, mail forwarding, OneDrive access transfer, and license removal. Sequenced deliberately to prevent license removal from breaking dependent steps.</li>
-                        <li>Produces a structured audit summary at completion: password, removed licenses, stripped groups, permissions granted, and OneDrive access link, ready to paste directly into the ticket note. Reduced average offboard time from 1-1.5 hours to under 20 minutes.</li>
+                        <li>Built an interactive PowerShell offboarding script that guides L1 technicians through a
+                            complete M365 user offboard via step-by-step prompts. No technical M365 knowledge required
+                            beyond answering questions.</li>
+                        <li>Supports both hybrid (on-prem AD + Entra ID) and cloud-only environments, detecting which
+                            it's dealing with and executing the appropriate steps, including domain controller
+                            reachability checks for hybrid clients.</li>
+                        <li>Handles the full offboard in a single run: account disable, session revocation, group
+                            removal, mailbox conversion to Shared, GAL suppression, litigation hold, mailbox access
+                            grants, mail forwarding, OneDrive access transfer, and license removal. Sequenced
+                            deliberately to prevent license removal from breaking dependent steps.</li>
+                        <li>Produces a structured audit summary at completion: password, removed licenses, stripped
+                            groups, permissions granted, and OneDrive access link, ready to paste directly into the
+                            ticket note. Reduced average offboard time from 1-1.5 hours to under 20 minutes.</li>
                     </ul>
                 </div>
 
@@ -614,15 +843,43 @@
                     <div class="timeline-company">NIST Security Risk Assessments</div>
                     <div class="timeline-role">Security & Compliance</div>
                     <ul class="timeline-bullets">
-                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored evaluations and phased remediation plans. Led rollouts across DLP, ITDR, PAM, and SaaS backup/recovery solutions.</li>
+                        <li>Conducted NIST-based Security Risk Assessments across client organizations, producing scored
+                            evaluations and phased remediation plans. Led rollouts across DLP, ITDR, PAM, and SaaS
+                            backup/recovery solutions.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-company">Conditional Access & IAM Design</div>
-                    <div class="timeline-role">Identity & Access Management</div>
+                    <div class="timeline-company">Identity & Access Management Design</div>
+                    <div class="timeline-role">Entra ID, Conditional Access & Access Governance</div>
                     <ul class="timeline-bullets">
-                        <li>Owned Conditional Access policy design across client environments, including MFA enforcement on compliant devices, geo-blocking, Zero Trust principles, and enterprise app SSO integrations via Entra ID.</li>
+                        <li>Designed and managed Conditional Access policies for client environments, including MFA
+                            enforcement on compliant devices, geo-blocking, and Zero Trust principles, with enterprise
+                            app SSO integrations through Entra ID.</li>
+                        <li>Built and maintained Entra ID app registrations and enterprise app integrations, managing
+                            role-based and group-based access assignments across client tenants.</li>
+                        <li>Configured authentication policies including sign-in risk policies and authentication method
+                            enforcement (FIDO2, Microsoft Authenticator), and tied Conditional Access to Intune device
+                            compliance to require a compliant device before granting access.</li>
+                        <li>Managed hybrid identity through Entra Connect, including hybrid join and password hash sync,
+                            and configured guest access and B2B external collaboration policies.</li>
+                        <li>Rolled out DLP policies in Microsoft Purview, scoping rules and exceptions per client to
+                            balance data protection against day-to-day usability.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-company">Okta Identity</div>
+                    <div class="timeline-role">SSO, Group Policy & User Lifecycle Management</div>
+                    <ul class="timeline-bullets">
+                        <li>Managed Okta SSO app integrations such as Slack, SAML configuration, and group and policy
+                            management for client environments, including Global Session Policies and MFA enrollment and
+                            enforcement.</li>
+                        <li>Managed user lifecycle provisioning and deprovisioning in Okta, including integrations with
+                            Microsoft 365 and on-premises Active Directory.</li>
+                        <li>Built Okta Workflows for event-driven automation: new user creation triggers an admin
+                            notification and a personalized welcome email, user deactivation triggers an offboarding
+                            alert.</li>
                     </ul>
                 </div>
 
@@ -638,21 +895,42 @@
                     <div class="timeline-company">Personal Brand & Portfolio Site</div>
                     <div class="timeline-role">Web Development & GitHub Pages</div>
                     <ul class="timeline-bullets">
-                        <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using HTML, CSS, and GitHub Pages. Managed with Git: SSH authentication, repo structure, and version control workflow.</li>
+                        <li>Built and deployed a personal hire page, resume page, and infrastructure portfolio using
+                            HTML, CSS, and GitHub Pages. Managed with Git: SSH authentication, repo structure, and
+                            version control workflow.</li>
                     </ul>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-company">Caira HQ Platform</div>
-                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP Terraform · Okta Workflows · TypeScript · Node.js · Railway</div>
+                    <div class="timeline-role">Okta · Google Workspace · SAML · SCIM · Terraform · GitHub Actions · HCP
+                        Terraform · Okta Workflows · TypeScript · Node.js · Railway</div>
                     <ul class="timeline-bullets">
-                        <li>Built a production identity platform on cairahq.com from scratch: Okta as the IdP federated to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
-                        <li>Managed Okta identity infrastructure as code using Terraform: users, groups, and app assignments declared in HCL, provisioned via the Okta provider, with state stored remotely in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration, where adding a user requires no code changes, only a new row.</li>
-                        <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform: all infrastructure changes flow through pull requests with automated format checks, validation, and plan output before a human approval gate triggers apply. No changes reach production without passing automated checks and explicit review.</li>
-                        <li>Implemented NIST 800-63B aligned password and session policies: no password expiration, length over complexity, 14-day session lifetime with MFA required as the compensating control. Documented the architectural reasoning behind each decision.</li>
-                        <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built Google Workspace integration. Not covered in official documentation, required SAML assertion inspection to identify.</li>
-                        <li>Built event-driven identity lifecycle automation using Okta Workflows: user creation triggers an admin notification and personalized welcome email, user deactivation triggers an offboarding alert. All flows use a Read User step to fetch full profile data at runtime.</li>
-                        <li>Built a TypeScript onboarding and offboarding service hosted on Railway: a web UI that takes form input, reads the live user roster CSV from GitHub via the API, commits the change to a new branch, and opens a pull request automatically. Terraform provisions the user on merge. Access protected by basic auth with Okta SSO as the planned production upgrade.</li>
+                        <li>Built a production identity platform on cairahq.com from scratch: Okta as the IdP federated
+                            to Google Workspace via SAML 2.0, SCIM provisioning, NIST-aligned security policies, and
+                            custom domains. Infrastructure managed as code via a full GitOps pipeline.</li>
+                        <li>Managed Okta identity infrastructure as code using Terraform: users, groups, and app
+                            assignments declared in HCL, provisioned via the Okta provider, with state stored remotely
+                            in HCP Terraform. User provisioning driven by a CSV roster simulating an HRIS integration,
+                            where adding a user requires no code changes, only a new row.</li>
+                        <li>Built a CI/CD pipeline using GitHub Actions and HCP Terraform: all infrastructure changes
+                            flow through pull requests with automated format checks, validation, and plan output before
+                            a human approval gate triggers apply. No changes reach production without passing automated
+                            checks and explicit review.</li>
+                        <li>Implemented NIST 800-63B aligned password and session policies: no password expiration,
+                            length over complexity, 14-day session lifetime with MFA required as the compensating
+                            control. Documented the architectural reasoning behind each decision.</li>
+                        <li>Diagnosed and resolved an undocumented SAML assertion format mismatch in Okta's pre-built
+                            Google Workspace integration. Not covered in official documentation, required SAML assertion
+                            inspection to identify.</li>
+                        <li>Built event-driven identity lifecycle automation using Okta Workflows: user creation
+                            triggers an admin notification and personalized welcome email, user deactivation triggers an
+                            offboarding alert. All flows use a Read User step to fetch full profile data at runtime.
+                        </li>
+                        <li>Built a TypeScript onboarding and offboarding service hosted on Railway: a web UI that takes
+                            form input, reads the live user roster CSV from GitHub via the API, commits the change to a
+                            new branch, and opens a pull request automatically. Terraform provisions the user on merge.
+                            Access protected by basic auth with Okta SSO as the planned production upgrade.</li>
                     </ul>
                 </div>
 
@@ -666,32 +944,41 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name">Identity & Access</div>
-                    <div class="skill-desc">Entra ID, Okta, Okta Workflows, Conditional Access, SSO, SAML, SCIM, RBAC, MFA, BYOD & app protection policies</div>
+                    <div class="skill-desc">Entra ID, Okta, Okta Workflows, Conditional Access, SSO, SAML, SCIM, RBAC,
+                        MFA, BYOD & app protection policies</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Cloud Platforms</div>
-                    <div class="skill-desc">Microsoft 365, Azure (VNets, VMs, Storage, Private DNS, Azure Files), Google Workspace</div>
+                    <div class="skill-desc">Microsoft 365, Azure (VNets, VMs, Storage, Private DNS, Azure Files), Google
+                        Workspace</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Device Management</div>
-                    <div class="skill-desc">Intune, Addigy (certified), Autopilot, macOS & Windows fleet management</div>
+                    <div class="skill-desc">Intune, Addigy (certified), Autopilot, macOS & Windows fleet management
+                    </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Security</div>
-                    <div class="skill-desc">NIST Risk Assessments, Zero Trust, DLP (Purview), ITDR, PAM, email security</div>
+                    <div class="skill-desc">NIST Risk Assessments, Zero Trust, DLP (Purview), ITDR, PAM, email security
+                    </div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Automation & IaC</div>
-                    <div class="skill-desc">PowerShell, Bash, TypeScript, Node.js, Terraform, HCP Terraform, GitHub Actions, Git/GitHub, GitOps, CI/CD pipelines, Railway, RMM/MDM automation, workflow design</div>
+                    <div class="skill-desc">PowerShell, Bash, TypeScript, Node.js, Terraform, HCP Terraform, GitHub
+                        Actions, Git/GitHub, GitOps, CI/CD pipelines, Railway, RMM/MDM automation, workflow design</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Infrastructure</div>
-                    <div class="skill-desc">Systems architecture, migrations, environment standardization, networking (Meraki certified)</div>
+                    <div class="skill-desc">Systems architecture, migrations, environment standardization, networking
+                        (Meraki certified)</div>
                 </div>
             </div>
 
             <div class="note-card">
-                <p>A note on tools: I've listed specific products where relevant but I hire myself on concepts, not logos. The vendors change but the principles don't. If you need Jamf experience but I have Addigy, that's an afternoon of reading, not a gap in skill. The same goes for any other tool in a domain I already understand deeply.</p>
+                <p>A note on tools: I've listed specific products where relevant but I hire myself on concepts, not
+                    logos. The vendors change but the principles don't. If you need Jamf experience but I have Addigy,
+                    that's an afternoon of reading, not a gap in skill. The same goes for any other tool in a domain I
+                    already understand deeply.</p>
             </div>
         </section>
 
@@ -702,15 +989,25 @@
             <div class="skills-grid">
                 <div class="skill-item">
                     <div class="skill-name">Microsoft 365 Certified: Endpoint Administrator Associate · 2020</div>
-                    <div class="skill-desc">Device management, compliance policies, and endpoint security across M365 environments. · Credential ID: DC49F65F76C25A3C · <a href="https://learn.microsoft.com/en-us/users/neilchavez-7536/credentials/dc49f65f76c25a3c" target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential ↗</a></div>
+                    <div class="skill-desc">Device management, compliance policies, and endpoint security across M365
+                        environments. · Credential ID: DC49F65F76C25A3C · <a
+                            href="https://learn.microsoft.com/en-us/users/neilchavez-7536/credentials/dc49f65f76c25a3c"
+                            target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential
+                            ↗</a></div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Cisco Certified Meraki Network Associate (CMNA) · 2021</div>
-                    <div class="skill-desc">Meraki networking fundamentals: switching, wireless, security appliances, and cloud management.</div>
+                    <div class="skill-desc">Meraki networking fundamentals: switching, wireless, security appliances,
+                        and cloud management.</div>
                 </div>
                 <div class="skill-item">
                     <div class="skill-name">Addigy Certified Expert (ACE) · 2024</div>
-                    <div class="skill-desc">Demonstrates expert level proficiency for macOS fleet management, MDM policies, and Apple device administration using the Addigy cloud-based platform and tools. · Credential ID: 127104333 · <a href="https://www.credential.net/88084578-2e8e-4143-95c1-dcf5a912fb90#acc.Bu8EJeQy" target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential ↗</a></div>
+                    <div class="skill-desc">Demonstrates expert level proficiency for macOS fleet management, MDM
+                        policies, and Apple device administration using the Addigy cloud-based platform and tools. ·
+                        Credential ID: 127104333 · <a
+                            href="https://www.credential.net/88084578-2e8e-4143-95c1-dcf5a912fb90#acc.Bu8EJeQy"
+                            target="_blank" style="color: var(--accent-warm); text-decoration: none;">View credential
+                            ↗</a></div>
                 </div>
             </div>
         </section>
@@ -721,7 +1018,8 @@
             <div class="section-label">My Work</div>
             <h2>Portfolio</h2>
             <div class="skills-grid" style="margin-top: 1.5em;">
-                <a href="https://neilchvz.github.io/infrastructure-portfolio/" target="_blank" class="skill-item" style="text-decoration: none; display: block;">
+                <a href="https://neilchvz.github.io/infrastructure-portfolio/" target="_blank" class="skill-item"
+                    style="text-decoration: none; display: block;">
                     <div class="skill-name" style="color: var(--accent-warm);">Infrastructure Portfolio ↗</div>
                     <div class="skill-desc">My past and current projects and scripts.</div>
                 </a>
@@ -732,7 +1030,12 @@
         <section>
             <div class="section-label">Personal Life</div>
             <h2>When I'm not working</h2>
-            <p>I shoot photography 📸, black and white is my specialty. I grow plants 🌿 and I'm actively working on making my Brooklyn living room as much of a jungle as I can. I have over 20 plants and yes, they each have names. I play guitar and I'm currently fiddling with Samba and Bossa Nova. I don't play sax all that much anymore but it is one of my new year's resolutions every year. I have a cat and her name is Chloe 🐱, she's all black and she's perfect. I live in arguably the greatest city in the world (fight me if you disagree) and I enjoy exploring it with my girlfriend.</p>
+            <p>I shoot photography 📸, black and white is my specialty. I grow plants 🌿 and I'm actively working on
+                making my Brooklyn living room as much of a jungle as I can. I have over 20 plants and yes, they each
+                have names. I play guitar and I'm currently fiddling with Samba and Bossa Nova. I don't play sax all
+                that much anymore but it is one of my new year's resolutions every year. I have a cat and her name is
+                Chloe 🐱, she's all black and she's perfect. I live in arguably the greatest city in the world (fight me
+                if you disagree) and I enjoy exploring it with my girlfriend.</p>
         </section>
 
         <!-- Find me -->
@@ -774,4 +1077,5 @@
 
     </div>
 </body>
+
 </html>
